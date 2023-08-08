@@ -13,6 +13,7 @@ String handleNetworkErrors(Exception exception) {
 }
 
 String _handleErrorCodes(String code) {
+  // TODO translate all the errors to the supported languages
   switch (code) {
     case 'network-request-failed':
       return 'network_errors.connection_error'.tr();
@@ -29,6 +30,10 @@ String _handleErrorCodes(String code) {
     case "operation-not-allowed":
       //  Anonymous auth hasn't been enabled for this project
       return 'The account corresponding to the credential already exists, or is already linked to a Firebase User.';
+    case "wrong-password":
+      return 'The password is invalid or the user does not have a password.';
+    case "email-already-in-use":
+      return 'The email address is already in use by another account';
     default:
       return 'network_errors.unknown'.tr();
   }

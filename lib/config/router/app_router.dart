@@ -1,5 +1,7 @@
 import 'package:flutter_sample/config/router/destinations.dart';
 import 'package:flutter_sample/presentation/screens/auth/authentication_screen.dart';
+import 'package:flutter_sample/presentation/screens/auth/register/create_account_screen.dart';
+import 'package:flutter_sample/presentation/screens/auth/reset/reset_password_screen.dart';
 import 'package:flutter_sample/presentation/screens/home/home_screen.dart';
 import 'package:flutter_sample/presentation/screens/profile/profile_screen.dart';
 import 'package:flutter_sample/presentation/screens/splash/splash_screen.dart';
@@ -21,6 +23,22 @@ class AppRouter {
         path: RouterDestination.authenticationScreen,
         name: RouterDestination.authenticationScreen,
         builder: (context, state) => AuthenticationScreen(key: state.pageKey),
+        routes: [
+          GoRoute(
+            path: RouterDestination.createAccountScreen,
+            name: RouterDestination.createAccountScreen,
+            builder: (context, state) {
+              return CreateAccountScreen(key: state.pageKey);
+            },
+          ),
+          GoRoute(
+            path: RouterDestination.forgotPasswordScreen,
+            name: RouterDestination.forgotPasswordScreen,
+            builder: (context, state) {
+              return ResetPasswordScreen(key: state.pageKey);
+            },
+          ),
+        ],
       ),
       GoRoute(
         path: RouterDestination.homeScreen,
