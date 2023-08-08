@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_sample/data/datasource/authentication_ds.dart';
+import 'package:flutter_sample/data/datasource/source/remote/authentication_ds.dart';
 import 'package:flutter_sample/data/repository/user_repo.dart';
 import 'package:injectable/injectable.dart';
 

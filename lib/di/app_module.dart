@@ -3,6 +3,7 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_performance/firebase_performance.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_sample/service/firebase_service.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -18,6 +19,9 @@ abstract class AppModule {
 
   @injectable
   FirebaseFirestore get store => FirebaseFirestore.instance;
+
+  @injectable
+  FirebaseStorage get storage => FirebaseStorage.instance;
 
   @injectable
   FirebaseAuth get auth => FirebaseAuth.instance

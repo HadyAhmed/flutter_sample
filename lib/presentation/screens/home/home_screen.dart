@@ -34,7 +34,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          context.pushNamed(RouterDestination.addPostScreen);
+        },
         tooltip: 'common.add_post'.tr(),
         child: const Icon(Icons.post_add),
       ),

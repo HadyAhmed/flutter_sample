@@ -29,5 +29,11 @@
     "bad_response": "Bad response",
     "connection_error": "Connection error",
     "unknown": "Unknown error"
+  },
+  "home": {
+    "add_picture": "Add Picture",
+    "add_post": "Create Post",
+    "post": "Post",
+    "whats_on_your_mind": "What's on your mind"
   }
 }

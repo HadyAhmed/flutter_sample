@@ -59,6 +59,7 @@ dependencies:
   either_dart: ^1.0.0
   animated_text_kit: ^4.2.2
   shared_preferences: ^2.2.0
+  firebase_storage: ^11.2.5
 
 dev_dependencies:
   flutter_test:

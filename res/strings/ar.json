@@ -29,5 +29,11 @@
     "bad_response": "رد سيء",
     "connection_error": "خطأ في الإتصال",
     "unknown": "خطأ غير معروف"
+  },
+  "home": {
+    "add_picture": "إضافة الصورة",
+    "add_post": "إنشاء منشور",
+    "post": "انشر",
+    "whats_on_your_mind": "ما الذي يدور في ذهنك"
   }
 }

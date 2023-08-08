@@ -3,6 +3,8 @@ import 'package:flutter_sample/presentation/screens/auth/authentication_screen.d
 import 'package:flutter_sample/presentation/screens/auth/register/create_account_screen.dart';
 import 'package:flutter_sample/presentation/screens/auth/reset/reset_password_screen.dart';
 import 'package:flutter_sample/presentation/screens/home/home_screen.dart';
+import 'package:flutter_sample/presentation/screens/posts/add/add_post_screen.dart';
+import 'package:flutter_sample/presentation/screens/posts/details/post_details_screen.dart';
 import 'package:flutter_sample/presentation/screens/profile/profile_screen.dart';
 import 'package:flutter_sample/presentation/screens/splash/splash_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -44,6 +46,18 @@ class AppRouter {
         path: RouterDestination.homeScreen,
         name: RouterDestination.homeScreen,
         builder: (context, state) => HomeScreen(key: state.pageKey),
+        routes: [
+          GoRoute(
+            path: RouterDestination.addPostScreen,
+            name: RouterDestination.addPostScreen,
+            builder: (context, state) => AddPostScreen(key: state.pageKey),
+          ),
+          GoRoute(
+            path: RouterDestination.postDetailsScreen,
+            name: RouterDestination.postDetailsScreen,
+            builder: (context, state) => PostDetailsScreen(key: state.pageKey),
+          ),
+        ],
       ),
       GoRoute(
         path: RouterDestination.profileScreen,
