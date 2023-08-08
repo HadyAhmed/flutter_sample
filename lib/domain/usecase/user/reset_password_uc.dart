@@ -2,10 +2,12 @@ import 'package:flutter_sample/data/repository/user_repo.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
-class IsLoggedInUseCase {
+class ResetPasswordUseCase {
   final UserRepo _repo;
 
-  IsLoggedInUseCase(this._repo);
+  ResetPasswordUseCase(this._repo);
 
-  Future<bool> run() => _repo.isLoggedIn();
+  Future<void> run(String email) {
+    return _repo.resetPassword(email);
+  }
 }
