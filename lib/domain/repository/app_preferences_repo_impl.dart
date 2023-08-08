@@ -1,4 +1,4 @@
-import 'package:flutter_sample/data/datasource/app_config_ds.dart';
+import 'package:flutter_sample/data/datasource/source/local/app_config_ds.dart';
 import 'package:flutter_sample/data/repository/app_preferences_repo.dart';
 import 'package:injectable/injectable.dart';
 
