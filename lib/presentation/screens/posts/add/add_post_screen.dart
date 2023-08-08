@@ -119,7 +119,8 @@ class _AddPostScreenState extends State<AddPostScreen> {
     try {
       provider.isGeneralLoading = true;
       await provider
-          .addPost(PostDomain(_text.text, _imagePath, Timestamp.now()));
+          .addPost(PostDomain(_text.text, _imagePath, Timestamp.now()))
+          .then((value) => context.pop());
     } catch (e) {
       context.showSnackBar(message: e.toString());
     } finally {
