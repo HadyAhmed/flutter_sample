@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sample/config/router/app_router.dart';
 import 'package:flutter_sample/presentation/screens/app_provider.dart';
 import 'package:flutter_sample/presentation/screens/auth/authentication_provider.dart';
+import 'package:flutter_sample/presentation/screens/home/home_provider.dart';
 import 'package:flutter_sample/presentation/screens/posts/add/add_post_provider.dart';
 import 'package:flutter_sample/presentation/screens/splash/splash_provider.dart';
 import 'package:flutter_sample/utils/extensions/layout_ext.dart';
@@ -27,6 +28,7 @@ class _SampleAppState extends State<SampleApp> {
         ChangeNotifierProvider(create: (_) => SplashProvider()),
         ChangeNotifierProvider(create: (_) => AuthenticationProvider()),
         ChangeNotifierProvider(create: (_) => AddPostProvider()),
+        ChangeNotifierProvider(create: (_) => HomeProvider()),
       ],
       child: Consumer<AppProvider>(
         builder: (context, provider, child) {

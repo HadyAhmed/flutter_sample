@@ -14,4 +14,9 @@ class PostsRepositoryImpl with PostRepository {
   Future<DocumentReference<Map<String, dynamic>>> addPost(PostDomain post) {
     return _dataSource.addPost(post);
   }
+
+  @override
+  Query<Map<String, dynamic>> getRecentlyPosts() {
+    return _dataSource.getRecentlyPosts();
+  }
 }

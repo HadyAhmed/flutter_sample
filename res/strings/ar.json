@@ -18,7 +18,8 @@
     "user_disabled": "تم تعطيل حساب المستخدم من قبل المسؤول.",
     "user_not_found": "لا يوجد سجل مستخدم مطابق لهذا المعرف. ربما تم حذف المستخدم.",
     "register_account": "تسجيل حساب",
-    "send_reset_password_link": "ارسل لينك"
+    "send_reset_password_link": "ارسل لينك",
+    "display_name": "الاسم"
   },
   "network_errors": {
     "connection_timeout": "انتهى وقت محاولة الاتصال",
@@ -34,6 +35,7 @@
     "add_picture": "إضافة الصورة",
     "add_post": "إنشاء منشور",
     "post": "انشر",
-    "whats_on_your_mind": "ما الذي يدور في ذهنك"
+    "whats_on_your_mind": "ما الذي يدور في ذهنك",
+    "no_posts": "لا يوجد منشورات الآن"
   }
 }

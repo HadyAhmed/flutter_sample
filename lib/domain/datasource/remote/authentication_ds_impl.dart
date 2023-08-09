@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_sample/data/datasource/source/remote/authentication_ds.dart';
@@ -7,9 +8,11 @@ import 'package:injectable/injectable.dart';
 @Injectable(as: AuthenticationDataSource)
 class AuthenticationDataSourceImpl with AuthenticationDataSource {
   final FirebaseAuth _auth;
+  final FirebaseFirestore _firestore;
 
   AuthenticationDataSourceImpl(
     this._auth,
+    this._firestore,
   );
 
   @override
@@ -25,8 +28,7 @@ class AuthenticationDataSourceImpl with AuthenticationDataSource {
   }
 
   @override
-  Future<UserCredential> loginWithCredentials(
-      String email, String password) async {
+  Future<UserCredential> loginWithCredentials(String email, String password) async {
     try {
       return await _auth.signInWithEmailAndPassword(
         email: email,
@@ -47,15 +49,24 @@ class AuthenticationDataSourceImpl with AuthenticationDataSource {
   }
 
   @override
-  Future<UserCredential> createWithCredentials(
+  Future<void> createWithCredentials(
+    String? name,
     String email,
     String password,
   ) async {
     try {
-      return await _auth.createUserWithEmailAndPassword(
+      return await _auth
+          .createUserWithEmailAndPassword(
         email: email,
         password: password,
-      );
+      )
+          .then((value) async {
+        return await _firestore.collection('Users').doc(value.user?.uid).set({
+          'name': name,
+          'image': null,
+          'email': email,
+        });
+      });
     } on Exception catch (e) {
       return Future.error(handleNetworkErrors(e));
     }
