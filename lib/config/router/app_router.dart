@@ -62,7 +62,10 @@ class AppRouter {
       GoRoute(
         path: RouterDestination.profileScreen,
         name: RouterDestination.profileScreen,
-        builder: (context, state) => ProfileScreen(key: state.pageKey),
+        builder: (context, state) => ProfileScreen(
+          key: state.pageKey,
+          data: state.extra as Map<String, dynamic>,
+        ),
       )
     ],
   );

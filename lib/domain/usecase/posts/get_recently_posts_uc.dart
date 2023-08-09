@@ -8,7 +8,7 @@ class GetRecentlyPostsUseCase {
 
   GetRecentlyPostsUseCase(this._repository);
 
-  Query<Map<String, dynamic>> run() {
-    return _repository.getRecentlyPosts();
+  Query<Map<String, dynamic>> run({String? uid}) {
+    return _repository.getRecentlyPosts(uid: uid);
   }
 }

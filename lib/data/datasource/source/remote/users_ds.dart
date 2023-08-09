@@ -4,4 +4,8 @@ import 'package:injectable/injectable.dart';
 @injectable
 mixin UsersDataSource {
   Future<DocumentSnapshot<Map<String, dynamic>>> getUserData(String uid);
+
+  Future<DocumentSnapshot<Map<String, dynamic>>> getAccountData();
+
+  updateName(String name);
 }

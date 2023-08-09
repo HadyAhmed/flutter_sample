@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_pagination/firebase_pagination.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/config/router/destinations.dart';
@@ -24,7 +25,13 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
             onPressed: () {
-              context.pushNamed(RouterDestination.profileScreen);
+              context.pushNamed(
+                RouterDestination.profileScreen,
+                extra: {
+                  'my_profile': true,
+                  'uid': FirebaseAuth.instance.currentUser?.uid,
+                },
+              );
             },
             icon: const Icon(Icons.account_circle_outlined),
           ),

@@ -8,15 +8,17 @@ mixin UserRepo {
 
   Future<UserCredential> loginWithCredentials(String email, String password);
 
-  Future<void> createWithCredentials(
-    String? name,
-    String email,
-    String password,
-  );
+  Future<void> createWithCredentials(String? name,
+      String email,
+      String password,);
 
   Future<void> resetPassword(String email);
 
   Future<void> logout();
 
   Future<DocumentSnapshot<Map<String, dynamic>>> getUserData(String uid);
+
+  Future<DocumentSnapshot<Map<String, dynamic>>> getAccountData();
+
+  Future<void> updateName(String name);
 }

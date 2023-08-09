@@ -16,7 +16,7 @@ class PostsRepositoryImpl with PostRepository {
   }
 
   @override
-  Query<Map<String, dynamic>> getRecentlyPosts() {
-    return _dataSource.getRecentlyPosts();
+  Query<Map<String, dynamic>> getRecentlyPosts({String? uid}) {
+    return _dataSource.getRecentlyPosts(uid: uid);
   }
 }

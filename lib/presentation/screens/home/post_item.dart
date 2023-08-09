@@ -14,7 +14,6 @@ class PostItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    (data['createdAt'] as Timestamp);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
