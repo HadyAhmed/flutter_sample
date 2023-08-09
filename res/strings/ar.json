@@ -1,0 +1,48 @@
+{
+  "app_name": "تطبيق توضيحى",
+  "common": {
+    "profile": "الصفحة الشخصية",
+    "add_post": "إضافة منشور",
+    "choose_pic": "اختر الصورة",
+    "choose_pic_msg": "اختر طريقك لالتقاط صورة",
+    "gallery": "معرض الصور",
+    "camera": "الكاميرا"
+  },
+  "authentication_screen": {
+    "change_language": "غير اللغة",
+    "email": "بريد إلكتروني",
+    "password": "كلمة المرور",
+    "confirm_password": "أكد كلمة المرور",
+    "password_hint": "6 أحرف على الأقل",
+    "login": "تسجيل الدخول",
+    "new_account": "حساب جديد !",
+    "forget_password": "هل نسيت كلمة المرور !",
+    "your_account_deactivated": "تم إلغاء تنشيط حسابك ، يرجى الاتصال بنا",
+    "credential_already_in_use": "الحساب المطابق لبيانات الاعتماد موجود بالفعل ، أو أنه مرتبط بالفعل بمستخدم Firebase.",
+    "user_disabled": "تم تعطيل حساب المستخدم من قبل المسؤول.",
+    "user_not_found": "لا يوجد سجل مستخدم مطابق لهذا المعرف. ربما تم حذف المستخدم.",
+    "register_account": "تسجيل حساب",
+    "send_reset_password_link": "ارسل لينك",
+    "display_name": "الاسم"
+  },
+  "network_errors": {
+    "connection_timeout": "انتهى وقت محاولة الاتصال",
+    "send_timeout": "انتهى وقت محاولة الارسال",
+    "receive_timeout": "انتهى وقت محاولة الاستقبال",
+    "bad_certificate": "شهادة شبكة سيئة",
+    "not_found": "غير موجود",
+    "bad_response": "رد سيء",
+    "connection_error": "خطأ في الإتصال",
+    "unknown": "خطأ غير معروف"
+  },
+  "home": {
+    "add_picture": "إضافة الصورة",
+    "add_post": "إنشاء منشور",
+    "post": "انشر",
+    "whats_on_your_mind": "ما الذي يدور في ذهنك",
+    "no_posts": "لا يوجد منشورات الآن"
+  },
+  "posts": {
+    "publishing_post_msg": "سنقوم بنشر منشورك بمجرد تحميله"
+  }
+}

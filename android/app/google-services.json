@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "459093764168",
+    "project_id": "hadi-ahmed",
+    "storage_bucket": "hadi-ahmed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459093764168:android:c4599108b1a6c9304cd07d",
+        "android_client_info": {
+          "package_name": "com.example.flutter_sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459093764168-34e47rrd5plgcb76nn03udg1ats33715.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJiweTvqZZ2xOh7DuMN75EsEKYkXSgzXE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459093764168-34e47rrd5plgcb76nn03udg1ats33715.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

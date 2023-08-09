@@ -1,0 +1,48 @@
+{
+  "app_name": "Sample App",
+  "common": {
+    "profile": "Profile",
+    "add_post": "Add Post",
+    "choose_pic": "Choose photo",
+    "choose_pic_msg": "Choose your way to pick up a picture",
+    "gallery": "Gallery",
+    "camera": "Camera"
+  },
+  "authentication_screen": {
+    "change_language": "Change Language",
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "password_hint": "6 characters at least",
+    "login": "Sign In",
+    "new_account": "New Account !",
+    "forget_password": "Forgot Password !",
+    "your_account_deactivated": "Your account is deactivated, please contact us",
+    "credential_already_in_use": "The account corresponding to the credential already exists, or is already linked to a Firebase User.",
+    "user_disabled": "The user account has been disabled by an administrator.",
+    "user_not_found": "There is no user record corresponding to this identifier. The user may have been deleted.",
+    "register_account": "Register Account",
+    "send_reset_password_link": "Send link",
+    "display_name": "Display Name"
+  },
+  "network_errors": {
+    "connection_timeout": "Connection timeout",
+    "send_timeout": "Send timeout",
+    "receive_timeout": "Receive timeout",
+    "bad_certificate": "Bad certificate",
+    "not_found": "Not found",
+    "bad_response": "Bad response",
+    "connection_error": "Connection error",
+    "unknown": "Unknown error"
+  },
+  "home": {
+    "add_picture": "Add Picture",
+    "add_post": "Create Post",
+    "post": "Post",
+    "whats_on_your_mind": "What's on your mind",
+    "no_posts": "No Posts Yet"
+  },
+  "posts": {
+    "publishing_post_msg": "We will publish your post once uploaded"
+  }
+}
