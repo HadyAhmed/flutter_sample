@@ -55,7 +55,10 @@ class AppRouter {
           GoRoute(
             path: RouterDestination.postDetailsScreen,
             name: RouterDestination.postDetailsScreen,
-            builder: (context, state) => PostDetailsScreen(key: state.pageKey),
+            builder: (context, state) => PostDetailsScreen(
+              key: state.pageKey,
+              data: state.extra as Map<String, dynamic>,
+            ),
           ),
         ],
       ),

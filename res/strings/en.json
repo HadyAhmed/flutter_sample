@@ -2,7 +2,11 @@
   "app_name": "Sample App",
   "common": {
     "profile": "Profile",
-    "add_post": "Add Post"
+    "add_post": "Add Post",
+    "choose_pic": "Choose photo",
+    "choose_pic_msg": "Choose your way to pick up a picture",
+    "gallery": "Gallery",
+    "camera": "Camera"
   },
   "authentication_screen": {
     "change_language": "Change Language",
@@ -37,5 +41,8 @@
     "post": "Post",
     "whats_on_your_mind": "What's on your mind",
     "no_posts": "No Posts Yet"
+  },
+  "posts": {
+    "publishing_post_msg": "We will publish your post once uploaded"
   }
 }
