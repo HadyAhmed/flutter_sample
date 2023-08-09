@@ -65,7 +65,15 @@ class _HomeScreenState extends State<HomeScreen> {
           isLive: true,
           itemBuilder: (context, documentSnapshot, index) {
             final data = documentSnapshot.data() as Map<String, dynamic>;
-            return PostItem(data: data);
+            return PostItem(
+              data: data,
+              onClick: (date) {
+                context.pushNamed(
+                  RouterDestination.postDetailsScreen,
+                  extra: data,
+                );
+              },
+            );
           },
         ),
       ),

@@ -116,11 +116,13 @@ class _AddPostScreenState extends State<AddPostScreen> {
   }
 
   void _addPost(AddPostProvider provider) async {
+    context
+      ..showSnackBar(message: 'posts.publishing_post_msg'.tr())
+      ..pop();
     try {
       provider.isGeneralLoading = true;
       await provider
-          .addPost(PostDomain(_text.text, _imagePath, Timestamp.now()))
-          .then((value) => context.pop());
+          .addPost(PostDomain(_text.text, _imagePath, Timestamp.now()));
     } catch (e) {
       context.showSnackBar(message: e.toString());
     } finally {
@@ -133,11 +135,11 @@ class _AddPostScreenState extends State<AddPostScreen> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Choose photo'),
-          content: Text('Choose your way to pick up a picture'),
+          title: Text('common.choose_pic'.tr()),
+          content: Text('common.choose_pic_msg'.tr()),
           actions: [
             TextButton.icon(
-              label: Text('Gallery'),
+              label: Text('common.gallery'.tr()),
               icon: const Icon(Icons.browse_gallery),
               onPressed: () {
                 context.pop();
@@ -145,7 +147,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
               },
             ),
             TextButton.icon(
-              label: Text('Camera'),
+              label: Text('common.camera'.tr()),
               icon: const Icon(Icons.camera),
               onPressed: () {
                 context.pop();

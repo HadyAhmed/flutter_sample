@@ -2,7 +2,11 @@
   "app_name": "تطبيق توضيحى",
   "common": {
     "profile": "الصفحة الشخصية",
-    "add_post": "إضافة منشور"
+    "add_post": "إضافة منشور",
+    "choose_pic": "اختر الصورة",
+    "choose_pic_msg": "اختر طريقك لالتقاط صورة",
+    "gallery": "معرض الصور",
+    "camera": "الكاميرا"
   },
   "authentication_screen": {
     "change_language": "غير اللغة",
@@ -37,5 +41,8 @@
     "post": "انشر",
     "whats_on_your_mind": "ما الذي يدور في ذهنك",
     "no_posts": "لا يوجد منشورات الآن"
+  },
+  "posts": {
+    "publishing_post_msg": "سنقوم بنشر منشورك بمجرد تحميله"
   }
 }
