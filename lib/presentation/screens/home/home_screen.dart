@@ -1,9 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_pagination/firebase_pagination.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/config/router/destinations.dart';
 import 'package:flutter_sample/presentation/screens/auth/authentication_provider.dart';
+import 'package:flutter_sample/presentation/screens/home/home_provider.dart';
 import 'package:flutter_sample/presentation/screens/home/post_item.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -43,26 +43,32 @@ class _HomeScreenState extends State<HomeScreen> {
         tooltip: 'common.add_post'.tr(),
         child: const Icon(Icons.post_add),
       ),
-      body: FirestorePagination(
-        query:
-            FirebaseFirestore.instance.collection('Posts').orderBy('createdAt'),
-        separatorBuilder: (context, index) => const Divider(),
-        onEmpty: Text('No Posts Yet'),
-        physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsets.all(8),
-        isLive: true,
-        itemBuilder: (context, documentSnapshot, index) {
-          final data = documentSnapshot.data() as Map<String, dynamic>;
-          return PostItem(data: data);
-        },
+      body: Scrollbar(
+        child: FirestorePagination(
+          query: Provider.of<HomeProvider>(context, listen: false)
+              .getRecentlyPosts(),
+          separatorBuilder: (context, index) => const Divider(),
+          onEmpty: Center(
+              child: Text(
+            'no_posts'.tr(),
+            style: Theme.of(context).textTheme.headlineMedium,
+          )),
+          physics: const BouncingScrollPhysics(),
+          padding: const EdgeInsets.all(8),
+          isLive: true,
+          itemBuilder: (context, documentSnapshot, index) {
+            final data = documentSnapshot.data() as Map<String, dynamic>;
+            return PostItem(data: data);
+          },
+        ),
       ),
     );
   }
 
   void _logout() {
     final provider =
-    Provider.of<AuthenticationProvider>(context, listen: false);
+        Provider.of<AuthenticationProvider>(context, listen: false);
     provider.logout().then(
-            (value) => context.goNamed(RouterDestination.authenticationScreen));
+        (value) => context.goNamed(RouterDestination.authenticationScreen));
   }
 }

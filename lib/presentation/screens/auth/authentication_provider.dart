@@ -25,8 +25,12 @@ class AuthenticationProvider with ChangeNotifier {
     return _signInWithEmailPasswordUC.run(email, password);
   }
 
-  Future<UserCredential> createNewAccount(String email, String password) {
-    return _registerAccountUC.run(email, password);
+  Future<void> createNewAccount(
+    String? name,
+    String email,
+    String password,
+  ) {
+    return _registerAccountUC.run(name, email, password);
   }
 
   Future<void> resetPassword(String email) {

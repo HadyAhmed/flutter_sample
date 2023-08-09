@@ -5,4 +5,6 @@ import 'package:injectable/injectable.dart';
 @injectable
 mixin PostRepository {
   Future<DocumentReference<Map<String, dynamic>>> addPost(PostDomain post);
+
+  Query<Map<String, dynamic>> getRecentlyPosts();
 }

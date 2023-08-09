@@ -16,7 +16,8 @@ class CreateAccountScreen extends StatefulWidget {
 }
 
 class _CreateAccountScreenState extends State<CreateAccountScreen> {
-  final _username = TextEditingController();
+  final _name = TextEditingController();
+  final _email = TextEditingController();
   final _password = TextEditingController();
   final _confirmPassword = TextEditingController();
 
@@ -47,7 +48,15 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     ),
                     const SizedBox(height: 32),
                     CustomTextField(
-                      controller: _username,
+                      controller: _name,
+                      keyboardType: TextInputType.text,
+                      textInputAction: TextInputAction.next,
+                      label: 'authentication_screen.display_name'.tr(),
+                      hint: 'John Doe',
+                    ),
+                    const SizedBox(height: 16),
+                    CustomTextField(
+                      controller: _email,
                       keyboardType: TextInputType.emailAddress,
                       textInputAction: TextInputAction.next,
                       label: 'authentication_screen.email'.tr(),
@@ -73,7 +82,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       onPressed: () {
                         _createAccount(
                           provider,
-                          _username.text,
+                          _name.text.isNotEmpty ? _name.text : null,
+                          _email.text,
                           _password.text,
                           _confirmPassword.text,
                         );
@@ -94,12 +104,13 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
 
   void _createAccount(
     AuthenticationProvider provider,
-    String username,
+    String? name,
+    String email,
     String password,
     String confirmPassword,
   ) async {
     // TODO handle the input validation errors later
-    if (username.isEmpty ||
+    if (email.isEmpty ||
         password.isEmpty ||
         confirmPassword.isEmpty ||
         password != confirmPassword) {
@@ -109,7 +120,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
 
     try {
       provider.isGeneralLoading = true;
-      await provider.createNewAccount(username, password).then((value) {
+      await provider.createNewAccount(name, email, password).then((value) {
         context.goNamed(RouterDestination.homeScreen);
       });
     } catch (e) {

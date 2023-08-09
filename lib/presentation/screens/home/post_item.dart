@@ -27,10 +27,17 @@ class PostItem extends StatelessWidget {
                   .format((data['createdAt'] as Timestamp).toDate()),
             ),
             const SizedBox(height: 16),
-            Text(data['text']),
+            Text(
+              data['text'],
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.start,
+            ),
             if (data['imagePath'] != null) const SizedBox(height: 8),
             if (data['imagePath'] != null)
-              CachedNetworkImage(imageUrl: data['imagePath']),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: CachedNetworkImage(imageUrl: data['imagePath']),
+              ),
             const SizedBox(height: 8),
           ],
         ),

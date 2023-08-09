@@ -9,7 +9,11 @@ mixin AuthenticationDataSource {
 
   Future<UserCredential> loginWithCredentials(String email, String password);
 
-  Future<UserCredential> createWithCredentials(String email, String password);
+  Future<void> createWithCredentials(
+    String? name,
+    String email,
+    String password,
+  );
 
   Future<void> resetPassword(String email);
 }

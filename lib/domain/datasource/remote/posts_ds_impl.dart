@@ -47,15 +47,24 @@ class PostsDataSourceImpl with PostsDataSource {
     }
   }
 
+  @override
   Future<String> getFileDownloadURL(String fileRef) async {
     return await _storage.ref(fileRef).getDownloadURL();
   }
 
+  @override
   Future<TaskSnapshot> uploadImage(
     String fileRef,
     String imageName,
     File imageFile,
   ) async {
     return await _storage.ref(fileRef).child(imageName).putFile(imageFile);
+  }
+
+  @override
+  Query<Map<String, dynamic>> getRecentlyPosts() {
+    return _firestore
+        .collection('Posts')
+        .orderBy('createdAt', descending: true);
   }
 }

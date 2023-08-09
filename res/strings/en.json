@@ -18,7 +18,8 @@
     "user_disabled": "The user account has been disabled by an administrator.",
     "user_not_found": "There is no user record corresponding to this identifier. The user may have been deleted.",
     "register_account": "Register Account",
-    "send_reset_password_link": "Send link"
+    "send_reset_password_link": "Send link",
+    "display_name": "Display Name"
   },
   "network_errors": {
     "connection_timeout": "Connection timeout",
@@ -34,6 +35,7 @@
     "add_picture": "Add Picture",
     "add_post": "Create Post",
     "post": "Post",
-    "whats_on_your_mind": "What's on your mind"
+    "whats_on_your_mind": "What's on your mind",
+    "no_posts": "No Posts Yet"
   }
 }
