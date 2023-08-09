@@ -48,7 +48,11 @@ class _HomeScreenState extends State<HomeScreen> {
           query: Provider.of<HomeProvider>(context, listen: false)
               .getRecentlyPosts(),
           separatorBuilder: (context, index) => const Divider(),
-          onEmpty: Text('no_posts'.tr()),
+          onEmpty: Center(
+              child: Text(
+            'no_posts'.tr(),
+            style: Theme.of(context).textTheme.headlineMedium,
+          )),
           physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.all(8),
           isLive: true,
