@@ -9,7 +9,7 @@ import 'package:injectable/injectable.dart';
 mixin PostsDataSource {
   Future<DocumentReference<Map<String, dynamic>>> addPost(PostDomain post);
 
-  Query<Map<String, dynamic>> getRecentlyPosts();
+  Query<Map<String, dynamic>> getRecentlyPosts({String? uid});
 
   Future<String> getFileDownloadURL(String fileRef);
 

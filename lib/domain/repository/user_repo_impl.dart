@@ -7,22 +7,22 @@ import 'package:injectable/injectable.dart';
 
 @Injectable(as: UserRepo)
 class UserRepoImpl with UserRepo {
-  final AuthenticationDataSource _dataSource;
+  final AuthenticationDataSource _authDataSource;
   final UsersDataSource _usersDataSource;
 
-  UserRepoImpl(this._dataSource, this._usersDataSource);
+  UserRepoImpl(this._authDataSource, this._usersDataSource);
 
   @override
-  Future<User?> userData() => _dataSource.userData();
+  Future<User?> userData() => _authDataSource.userData();
 
   @override
   Future<void> logout() async {
-    return _dataSource.logout();
+    return _authDataSource.logout();
   }
 
   @override
   Future<UserCredential> loginWithCredentials(String email, String password) {
-    return _dataSource.loginWithCredentials(email, password);
+    return _authDataSource.loginWithCredentials(email, password);
   }
 
   @override
@@ -31,16 +31,26 @@ class UserRepoImpl with UserRepo {
     String email,
     String password,
   ) {
-    return _dataSource.createWithCredentials(name, email, password);
+    return _authDataSource.createWithCredentials(name, email, password);
   }
 
   @override
   Future<void> resetPassword(String email) {
-    return _dataSource.resetPassword(email);
+    return _authDataSource.resetPassword(email);
   }
 
   @override
   Future<DocumentSnapshot<Map<String, dynamic>>> getUserData(String uid) {
     return _usersDataSource.getUserData(uid);
+  }
+
+  @override
+  Future<DocumentSnapshot<Map<String, dynamic>>> getAccountData() {
+    return _usersDataSource.getAccountData();
+  }
+
+  @override
+  Future<void> updateName(String name) {
+    return _usersDataSource.updateName(name);
   }
 }

@@ -8,8 +8,8 @@ class HomeProvider with ChangeNotifier {
   final _getPostsUseCase = locator<GetRecentlyPostsUseCase>();
   final _getUserData = locator<GetUserUseCase>();
 
-  Query<Map<String, dynamic>> getRecentlyPosts() {
-    return _getPostsUseCase.run();
+  Query<Map<String, dynamic>> getRecentlyPosts({String? uid}) {
+    return _getPostsUseCase.run(uid: uid);
   }
 
   Future<DocumentSnapshot<Map<String, dynamic>>> getUserData(uid) {

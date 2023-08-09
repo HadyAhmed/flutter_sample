@@ -62,9 +62,12 @@ class PostsDataSourceImpl with PostsDataSource {
   }
 
   @override
-  Query<Map<String, dynamic>> getRecentlyPosts() {
-    return _firestore
-        .collection('Posts')
-        .orderBy('createdAt', descending: true);
+  Query<Map<String, dynamic>> getRecentlyPosts({String? uid}) {
+    return uid != null
+        ? _firestore
+            .collection('Posts')
+            .where('createdBy', isEqualTo: uid)
+            .orderBy('createdAt', descending: true)
+        : _firestore.collection('Posts').orderBy('createdAt', descending: true);
   }
 }

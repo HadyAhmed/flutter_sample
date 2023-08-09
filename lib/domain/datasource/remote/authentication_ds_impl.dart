@@ -28,7 +28,8 @@ class AuthenticationDataSourceImpl with AuthenticationDataSource {
   }
 
   @override
-  Future<UserCredential> loginWithCredentials(String email, String password) async {
+  Future<UserCredential> loginWithCredentials(
+      String email, String password) async {
     try {
       return await _auth.signInWithEmailAndPassword(
         email: email,
@@ -62,8 +63,8 @@ class AuthenticationDataSourceImpl with AuthenticationDataSource {
       )
           .then((value) async {
         return await _firestore.collection('Users').doc(value.user?.uid).set({
-          'name': name,
-          'image': null,
+          'name': name ?? value.user?.displayName,
+          'image': value.user?.photoURL,
           'email': email,
         });
       });
